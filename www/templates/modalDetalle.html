@@ -1,0 +1,46 @@
+<ion-view class="bar-positive bg-dash">
+  <ion-header-bar class="bar-positive">
+    <h1 class="title">Explicación</h1>
+    <div class="buttons">
+      <a class="button button-icon small ion-close" ng-click="cerrar_modal()">
+      </a>
+    </div>
+  </ion-header-bar> 
+  <ion-content class="padding-20">
+    <ion-list ng-repeat="item in detallePreguntas | startFrom: currentPage * pageSize | limitTo:pageSize"> 
+      <!-- <button ion-button color="secondary" outline ng-click="logOutEmail()">logOutEmail</button> -->
+      <div class="row">
+        <div class="col"> 
+          <div data-tap-disabled="true" >
+            <audio controls>                                        
+              <source ng-src="{{ item.det_audio | trusted }}" type="audio/mp3">                                                        
+            </audio>
+          </div> 
+        </div>
+      </div> 
+      <div class="row">
+        <div class="col">
+          <h4 class="m0" ng-model="$parent.titulo">{{item.titulo}}</h4>
+        </div>
+      </div> 
+      <div class="list">   
+        <div class="card m-t-0">
+          <label ng-repeat="(key_child, o) in item.ops" ng-if="key_child == item.res"  class="item item-border item-icon-left item-radio">
+            <input type="radio" name="{{item.pre}}" ng-model="$parent.item.res_temp" value="{{key_child}}" ng-disabled="true">
+            <div class="item-content no-ellipsis"> 
+              <span  class="ion-checkmark balanced"></span>
+              {{o}}  
+            </div>
+            <i class="radio-icon ion-checkmark"></i>
+          </label>  
+        </div>
+      </div> 
+      <div class="card">
+        <div class="item item-text-wrap">
+          {{item.det}}
+        </div>
+      </div>  
+
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width"> 
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+     <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script> -->
+
+    <link href="css/ionic.app.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="lib/ionic/js/Chart.min.js"></script>
+    <script src="lib/ionic/js/angular/angular-chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-cookies.min.js"></script>
+
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore.js"></script> -->
+
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+    
+    <!-- <script src="https://zynga.github.io/scroller/src/Animate.js"></script> -->
+    <!-- <script src="https://zynga.github.io/scroller/src/Scroller.js"></script> -->
+
+    <script> 
+      // var config = {
+      //   apiKey: "AIzaSyDA-dt4bZVb_W6vDpNNBCVXmuG0GsHzPKk",
+      //   authDomain: "pm125-ad7b8.firebaseapp.com",
+      //   databaseURL: "https://pm125-ad7b8.firebaseio.com",
+      //   projectId: "pm125-ad7b8",
+      //   storageBucket: "pm125-ad7b8.appspot.com",
+      //   messagingSenderId: "357863666735"
+      // };
+      // firebase.initializeApp(config);
+      var config = {
+    apiKey: "AIzaSyBDI6oVdAb0H2nLaNy6mmpHtYibrbbbnBE",
+    authDomain: "breligo-1492382470222.firebaseapp.com",
+    databaseURL: "https://breligo-1492382470222.firebaseio.com",
+    projectId: "breligo-1492382470222",
+    storageBucket: "breligo-1492382470222.appspot.com",
+    messagingSenderId: "578647227831"
+  };
+  firebase.initializeApp(config);
+    </script>
+  </head>
+
+  <body ng-app="starter">
+    <ion-nav-view>
+      
+    </ion-nav-view>
+
+  </body>
+</html>

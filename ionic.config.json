@@ -1,0 +1,9 @@
+{
+  "name": "iencuestas",
+  "app_id": "7d4f5834",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic1",
+  "watchPatterns": []
+}

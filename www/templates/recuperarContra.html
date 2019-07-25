@@ -1,0 +1,36 @@
+<ion-view class="bg-login"> 
+  <ion-content class="scroll-content">
+    <div class="row">
+      <form name="resetForm" class="list padding-20">
+        <ion-list id="signup-list3" class=""> 
+            <div class="text-center">
+              <img class="img-m" width="50px" src="img/login/logo.png">
+            </div> 
+            <h4 class="title"><b>Restablecer Contraseña</b></h4>
+            <div class="app-icon"></div>
+            <label class="item item-input item-floating-label">
+              <span class="input-label">correo electrónico </span>
+              <input type="email" name="email" ng-model="email" placeholder="correo electrónico" required>
+            </label>
+            <label class="item-mensaje"> 
+              <ul> 
+                <li ng-show="resetForm.email.$error.email">
+                  * Correo Electrónico no valido.
+                </li>
+                <li ng-show="mensaje_correo" ng-bind="mensaje_correo">
+                </li> 
+                <li class="balanced" ng-show="mensaje_aceptado" ng-bind="mensaje_aceptado">
+                </li> 
+              </ul>  
+            </label>
+            <!-- </label>  -->
+            <label class="item item-button button-padding-0">
+              <button class="button button-block button-positive" ng-disabled="resetForm.$invalid" type="submit" ng-click="recuperarPassword(email)">Restablecer</button>
+            </label>
+        </ion-list> 
+        
+        </div>
+      </form>   
+    </div>
+  </ion-content>
+</ion-view>

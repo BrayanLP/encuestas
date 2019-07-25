@@ -1,0 +1,67 @@
+<ion-view class="bg-login"> 
+  <ion-content class="scroll-content">
+    <div class="row">
+      <form name="loginForm" ng-submit="loginEmail()" class="list padding-20">
+        <ion-list id="signup-list3" class=""> 
+            <div class="text-center">
+              <img class="img-m" width="50px" src="img/login/logo.png">
+            </div> 
+            <h4 class="title"><b>Iniciar Sesión</b></h4>
+            <div class="app-icon"></div>
+            <label class="item item-input item-floating-label">
+              <span class="input-label">correo electrónico </span>
+              <input type="email" name="email" ng-model="data.email" placeholder="correo electrónico" required>
+            </label>
+            <label class="item-mensaje"> 
+              <ul> 
+                <li ng-show="loginForm.email.$error.email">
+                  * Correo Electrónico no valido.
+                </li>
+                <li ng-show="mensaje_correo" ng-bind="mensaje_correo">
+                </li> 
+                <li ng-show="mensaje_total" ng-bind="mensaje_total">
+                </li> 
+              </ul>  
+            </label>
+            <label class="item item-input item-floating-label">
+              <span class="input-label">contraseña</span>
+              <input type="password" name="password" ng-model="data.password" placeholder="contraseña" required>
+            </label>
+            <label class="item-mensaje"> 
+              <ul> 
+                <li ng-show="mensaje_contrasena" ng-bind="mensaje_contrasena"> 
+                </li>
+              </ul>  
+            </label>
+            <!-- <label class="item item-button p0"> -->
+              <!-- <div class="row p0">
+                <div class="col p0">
+                  <ion-checkbox ng-model="data.recordar">
+                    Recordar Contraseña
+                  </ion-checkbox> 
+                </div> 
+              </div> -->
+              <div class="row p0">
+                <div class="col p0">
+                  <span class="full-width"><a class="lose" href="#/recuperar">¿Olvidaste tu contraseña?</a></span>
+                </div>
+              </div>
+            <!-- </label>  -->
+            <label class="item item-button button-padding-0">
+              <button class="button button-block button-positive" ng-disabled="loginForm.$invalid" type="submit" >Iniciar Sesión</button>
+            </label>
+        </ion-list> 
+        <div class="row"> 
+          <div class="col">
+            <label class="text-center">             
+              <span class="full-width">¿No tienes una cuenta en encuestas?</span>
+              <a on-tap="abrir_modal(1)" class="color-positive full-width">
+                <b>Crear Cuenta</b>
+              </a>
+            </label>  
+          </div>
+        </div>
+      </form>   
+    </div>
+  </ion-content>
+</ion-view>

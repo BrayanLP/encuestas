@@ -1,0 +1,18 @@
+<ion-view  class="bg-dash">
+  	<ion-header-bar class="bar-positive">
+	    <h1 class="title">Verficación</h1>
+	    <div class="buttons">
+	      	<!-- <a class="button button-icon small ion-close" ng-click="cerrar_modal(2)">
+	      	</a> -->
+	    </div>
+	</ion-header-bar> 
+  	<ion-content class="padding-20"> 
+  		<h3>El correo no esta verificado</h3>
+  		<p>Hemos enviado un mensaje de confirmación al correo <br><b>{{ email }}</b><br>Si ya verificó la cuenta, presione el siguiente botón</p>
+  		<!-- <p>si no recibio un correo vuelva a intentarlo dando <a ng-click="re_enviar()">click aquí</a></p> -->
+  		<!-- <label class=""> -->
+    	<!-- <a class="button button-block button-balanced" ng-click="verificado()">Ya Estoy Verificado</a>   -->
+      <a class="button button-block button-energized" ng-click="logOutEmail()">Regresar al Logín</a>  
+      	<!-- </label> -->
+  	</ion-content>
+</ion-view>

@@ -1,0 +1,48 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-positive">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-stable side-menu-lp">
+      <ion-item class="item-profile">
+        <div class="item-avatar">
+          <img ng-src="{{foto}}">
+        </div>
+        <h2 class="side-menu-h2"><b ng-bind="nombre_completo"></b></h2>
+        <h4 class="side-menu-h4" ng-bind="email"></h4>
+      </ion-item>
+    </ion-header-bar>
+    <ion-content class="top-content-lp scroll-content">
+      <ion-list class="list-lp"> 
+        <ion-item menu-close href="#/app/ramas">
+          <i class="icon icon ion-home"></i> Principal
+        </ion-item> 
+        <ion-item menu-close ng-click="init()">
+          <i class="icon icon ion-podium"></i> Examenes
+        </ion-item>
+        <ion-item menu-close href="#/app/cuenta">
+          <i class="icon icon ion-person"></i> Ver cuenta
+        </ion-item> 
+        <ion-item menu-close href="#/app/ayuda" >
+          <i class="icon icon ion-ios-information"></i> Ayuda y Opinión
+        </ion-item>
+        <!-- <ion-item menu-close >
+          <i class="icon icon ion-information-circled"></i> Nosotros
+        </ion-item> -->
+        <ion-item menu-close  ng-click="logOutEmail()">
+          <i class="icon icon ion-log-out"></i> Cerrar sesión
+        </ion-item>
+      </ion-list> 
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

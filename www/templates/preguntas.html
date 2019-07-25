@@ -1,0 +1,90 @@
+<ion-view  class="bar-positive bg-dash">
+  	<ion-header-bar class="bar bar-positive">
+    <h1 class="title">{{nombre}}</h1>  
+  	</ion-header-bar>  
+    
+	<ion-content class="padding-20"> 
+		<form name="preguntas">
+			<!-- <div class="row">
+				<div class="col ">
+		  			<progress max="{{counterMax}}" min="0" value="{{counter}}"> aqui</progress>
+		    		<span class="progress-span button-clear  button item-button-right">{{ counter | secondsToDateTime | date:'HH:mm:ss'}}</span>
+		  		</div> 
+	    	</div> --> 
+		    <a class="item item-list-detail p0" ng-if="image.img" ng-repeat="image in data | startFrom: currentPage * pageSize | limitTo:pageSize"> 
+	    		<img width="100%" ng-src="{{image.img}}" ng-click="showImages($index)"  /> 
+		    </a> 
+			<div class="row">
+	    		<div class="col"> 
+    				<div data-tap-disabled="true" >
+    					<audio controls>                                        
+    						<source ng-src="{{ item.audio | trusted }}" type="audio/mp3">                                                        
+    					</audio>
+    				</div> 
+	    		</div>
+	    	</div> 
+	    	<div class="row">
+	    		<div class="col">
+	    			<span class="progress-span">Tiempo Restante:  <b>{{ counter | secondsToDateTime | date:'HH:mm:ss'}}</b></span> 
+	    		</div> 
+	    	</div>
+	    	<ion-list ng-repeat="item in data | startFrom: currentPage * pageSize | limitTo:pageSize"> 
+				<!-- <button ion-button color="secondary" outline ng-click="logOutEmail()">logOutEmail</button> -->
+		      	<div class="row">
+		      		<div class="col">
+				      	<h4 class="m0" ng-model="$parent.titulo">{{item.titulo}}</h4>
+			    	</div>
+		    	</div>  
+		      	<div class="list m0">   
+			    	<p class="progress-span p-r-s">Mostrando {{currentPage+1}} de {{numberOfPages()}}</p>
+				  	<div class="card m-t-0">
+					  	<label ng-repeat="(key_child, o) in item.ops" ng-click="check()" class="item item-border item-icon-left item-radio">
+						    <input type="radio" name="{{item.pre}}" ng-model="$parent.item.res_temp" ng-disabled="item.res_temp" value="{{key_child}}" >
+						    <div class="item-content no-ellipsis"> 
+						    	{{o}}
+			              	</div>
+		              		<i class="radio-icon ion-checkmark"></i>
+					  	</label>  
+				  	</div>
+				  	<p class="progress-span p-r-s m0"><b>ID de Pregunta: {{item.id}}</b></p>
+				</div>   
+		    	
+
+	    	</ion-list>
+	    	<!-- <button ng-click="stopTimeout()" ng-show="!stopped">STOP ME !</button> -->
+  			<!-- <button ng-click="restatTimeout()" ng-show="stopped">RESUME ME!</button> -->
+	    	<div class="row"  >
+	    		<div class="col">
+				    <button ng-disabled="currentPage >= getData().length/pageSize - 1" class="button button-block button-light icon-right ion-refresh" ng-click="pasar(currentPage)">
+					  	Pasar Pregunta
+					</button>
+					<!-- <button class="button button-block button-light icon-right ion-refresh" ng-click="removerPregunta(currentPage)">
+					  	Pasar Pregunta
+					</button> -->
+				</div>
+			</div> 
+	    	<div class="row">
+	    		<div class="col col-50">
+			    	<button class="button button-block button-calm icon-left ion-chevron-left" ng-disabled="currentPage == 0" ng-click="anterior()">
+				        Anterior
+				    </button> 
+	    		</div>
+	    		<div class="col col-50">
+				    <!-- <button class="button button-block button-energized icon-right ion-android-exit" ng-disabled="preguntas.$invalid"  ng-if="currentPage >= getData().length/pageSize - 1" ng-click="confirmar_examen()">
+					  	Finalizar 
+					</button> -->
+				    <button class="button button-block button-balanced icon-right ion-chevron-right" ng-disabled="currentPage >= getData().length/pageSize - 1" ng-click="siguiente()">
+				         Siguiente 
+				    </button>
+	    		</div>
+	    	</div>
+	    	<div class="row">
+	    		<div class="col">
+				    <button class="button button-block button-energized icon-right ion-android-exit" ng-click="confirmar_examen()">
+					  	Finalizar 
+					</button> 
+	    		</div>
+	    	</div>
+		</form>
+  	</ion-content>
+</ion-view>

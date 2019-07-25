@@ -1,0 +1,10 @@
+<ion-view view-title="RAMAS"  class="bar-positive bg-dash">
+  	<ion-content class="padding-20">
+    	<ion-list>  
+	      	<ion-item class="item-list item-icon-right" ng-repeat="(key, cap) in data_capitulos" href="#/app/ramas/{{key}}" ng-click="getNombre(cap.titulo)"> 
+	        	{{cap.titulo}} 
+	        	<i class="icon ion-chevron-right"></i>
+	      	</ion-item>
+    	</ion-list>
+  	</ion-content>
+</ion-view>

@@ -1,0 +1,71 @@
+<ion-view view-title="Cuenta" class="bar-positive bg-dash">
+  <ion-content class="padding-20">
+  	<form name="form" novalidate>
+		<h4>Establecer Foto de Perfil</h4>
+  		<ul class="list"> 
+  			<li class="item p0">
+  				<input class="button button-clear button-dark hidden" id="file" type="file" name="file" custom-on-change="uploadFile" >  
+  			</li> 
+  			<label class="item-mensaje balanced"> 
+	            <ul> 
+	              <li class="balanced" ng-show="mensajeFoto">
+	                * Foto se actualizo correctamente.
+	              </li>
+	            </ul>  
+	      	</label> 
+  		</ul>
+  		<!-- <button ng-click="showConfirm()" class="p0">Cargar Foto</button> -->
+	  	<div class="divider"></div>
+	  	<div class="list">
+			<h4>Cambiar Nombre</h4>
+	  		<label class="item item-input item-floating-label">
+	  			<span class="input-label">Nombre Completo</span>
+	  			<input type="text" placeholder="Nombre Completo" ng-model="getInfo.nombre_completo">
+	  			<!-- <input type="text" placeholder="Nombre Completo" ng-model="$parent.nombre_completo"> -->
+	  		</label>
+	  		<label class="item-mensaje balanced"> 
+	            <ul> 
+	              <li class="balanced" ng-show="mensajeNombre">
+	                * Nombre se actualizo correctamente.
+	              </li>
+	            </ul>  
+	      	</label>
+	  	</div>
+	  	<div class="list">
+
+	  		<h4>Cambiar contraseña</h4>
+	  		<!-- <div class="divider"></div> -->
+	  		<label class="item item-input item-floating-label">
+	  			<span class="input-label">Nueva Contraseña</span>
+	  			<input type="password" placeholder="Nueva Contraseña" name="pass" ng-model="getInfo.pass" ng-minlength="6">
+	  		</label>
+	  		<label class="item item-input item-floating-label">
+	  			<span class="input-label"> Repite Contraseña</span>
+	  			<input type="password" placeholder=" Repite Contraseña" name="pass2" ng-model="getInfo.pass2" ng-minlength="6">
+	  		</label>
+			<label class="item-mensaje balanced"> 
+	            <ul> 
+	              <li class="balanced" ng-show="mensajeContra">
+	                * Contraseña se actualizo correctamente, y en breves segundo se cerrara la sesión.
+	              </li>
+	              <li class="positive" ng-show="form.pass.$error.minlength || form.pass2.$error.minlength">
+	                * La contraseña debe ser mayor o igual a 6 digitos.
+	              </li>
+	              <li class="positive" ng-show="mensajeErrorContra">
+	                * Ocurrio un error al cambiar la contraseña, cierra sesión y vuelva a intentarlo.
+	              </li>
+	              <li class="positive" ng-show="mensajeErrorCoinciden">
+	                * Contraseñas no coinciden.
+	              </li>
+	            </ul>  
+	      	</label>
+	  		
+	  		<label class="item item-input">
+		  		<button class="button button-block button-positive " ng-click="actualizarData()">
+				  	Actualizar Datos
+				</button>
+			</label>
+	  	</div>
+  </form>
+  </ion-content>
+</ion-view>

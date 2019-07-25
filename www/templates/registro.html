@@ -1,0 +1,55 @@
+<ion-view>
+  <ion-header-bar class="bar-positive">
+    <h1 class="title">Registrar Usuario</h1>
+    <div class="buttons">
+      <a class="button button-icon small ion-close" ng-click="cerrar_modal(1)">
+      </a>
+    </div>
+  </ion-header-bar> 
+  <ion-content>
+    <div  class="row">
+      <form name="signupForm" novalidate class="list padding-20">
+        <ion-list class=" " id="signup-list3"> 
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Nombre Completo *</span>
+            <input ng-model="add.name" name="name" type="text" placeholder="nombre completo *" ng-pattern="/^[a-zA-Z\_\- ]*$/" required> 
+          </label> 
+          <label class="item-mensaje"> 
+            <ul>
+              <li ng-show="signupForm.name.$error.pattern">
+                * Solo se permite letras. 
+              </li> 
+            </ul>  
+          </label>
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Correo Electrónico *</span>
+            <input ng-model="add.email" name="email" type="email" placeholder="correo electrónico *" required>
+          </label> 
+          <label class="item-mensaje"> 
+            <ul> 
+              <li ng-show="signupForm.email.$error.email">
+                * Correo Electrónico no valido.
+              </li>
+              <li ng-show="mensaje" ng-bind="mensaje">
+              </li> 
+            </ul>  
+          </label> 
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Contraseña *</span>
+            <input ng-model="add.password" name="password" type="password" ng-minlength="6"  placeholder="contraseña *" required>
+          </label>
+          <label class="item-mensaje"> 
+            <ul> 
+              <li ng-show="signupForm.password.$error.minlength">
+                * Contraseña debe ser mayor a 6 dígitos
+              </li>
+            </ul>  
+          </label>
+          <label class="item item-button">
+            <button class="button button-block button-positive" ng-disabled="signupForm.$invalid" ng-click="signupEmail(signupForm,add)">Crear Usuario</button>
+          </label>
+      </ion-list> 
+    </form>
+  </div>
+  </ion-content>
+</ion-view>
